@@ -1,6 +1,10 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import ContactStyles from "./Contact.css?inline";
 
 export default component$(() => {
+// By specifying scoped in the hook below we make the styles apply only to the index.tsx file of this route
+    useStylesScoped$(ContactStyles)
+
     return (
         <article>
             <h2>Contact</h2>

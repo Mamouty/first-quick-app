@@ -1,7 +1,10 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
+import AboutStyles from "./about.css?inline";
 
 export default component$(() => {
-    console.log('hello')
+// Using the hook below for styling makes all the imported styles apply to the page and not specific to the route.
+    useStyles$(AboutStyles)
+
     return (
         <article>
             <h2>About</h2>
