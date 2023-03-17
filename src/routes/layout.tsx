@@ -1,3 +1,5 @@
+// The layout.tsx file serves to put together the components of the page.
+// To remove the layout for a certain route, add an exclamation mark at the en of its name like so: index!.jsx
 import { component$, Slot } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
 
@@ -10,20 +12,16 @@ export const useServerTimeLoader = routeLoader$(() => {
 });
 
 export default component$(() => {
-  const serverTime = useServerTimeLoader();
   return (
     <>
       <main>
         <Header />
-        <section>
+        <section class="container">
           <Slot />
         </section>
       </main>
       <footer>
-        <a href="https://www.builder.io/" target="_blank">
-          Made with ♡ by Builder.io
-          <div>{serverTime.value.date}</div>
-        </a>
+        <p>Copyright 2023 Quik App</p>
       </footer>
     </>
   );
